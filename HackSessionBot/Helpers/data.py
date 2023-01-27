@@ -1,4 +1,4 @@
-from pyrogram import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM 
+from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM 
 
 
 PM_TEXT = """
