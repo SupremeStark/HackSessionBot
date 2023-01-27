@@ -19,7 +19,7 @@ async def users_gc(session):
     msg = ""
     try:
         if session.endswith("="):
-            async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:
+            with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:
                 try:
                     await steve(join(CHAT))
                 except Exception as e:
