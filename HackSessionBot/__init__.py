@@ -6,6 +6,7 @@ from rich.console import Console
 from rich.table import Table
 from motor.motor_asyncio import AsyncIOMotorClient
 from HackSessionBot.Helpers.data import LOG_TEXT
+from pyromod import listen 
 
 #getting variables
 API_ID = Config.API_ID
