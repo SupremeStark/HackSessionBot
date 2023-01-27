@@ -23,4 +23,7 @@ async def _hack(_, message):
 @app.on_callback_query(filters.regex("hack_btn"))
 async def heck_callback(bot : app, query : CallbackQuery):
     await query.message.delete()
+    await query.message.reply_text(HACK_TEXT,
+              reply_markup = HACK_MODS) 
+
 
