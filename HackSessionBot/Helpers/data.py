@@ -1,3 +1,5 @@
+from pyrogram import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM 
+
 
 PM_TEXT = """
 **ʜᴇʏ {},**
@@ -5,6 +7,31 @@ PM_TEXT = """
 ɪ sᴜᴘᴘᴏʀᴛ ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴛʀɪɴɢ sᴇssɪᴏɴ
 ᴄʟɪᴄᴋ ᴏɴ ʜᴀᴄᴋ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ I ᴄᴀɴ ᴅᴏ.
 """
+
+PM_BUTTON = IKM([[IKB("🤖 ʜᴀᴄᴋ", callback_data="help_btn")]])
+
+HACK_MODS = IKM([
+    [
+        IKB("A", callback_data="A"),
+        IKB("B", callback_data ="B"),
+        IKB("C", callback_data="C"),
+        IKB("D", callback_data="D"),
+        IKB("E", callback_data="E"),          
+    ],
+    [
+        IKB("F", callback_data="F"),
+        IKB("G", callback_data ="G"),
+        IKB("H", callback_data="H"),
+        IKB("I", callback_data="I"),
+        IKB("J", callback_data="J"),           
+    ],
+    [
+        IKB("K", callback_data="F"),
+        IKB("L", callback_data ="G"),
+        IKB("M", callback_data="H"),                   
+    ],
+    ],    
+    )
 
 
 
