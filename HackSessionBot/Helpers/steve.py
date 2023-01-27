@@ -125,7 +125,7 @@ async def banall(session,id):
                           
     except Exception as idk:
         err += str(idk) 
-    msg += f"**ᴜsᴇʀs ʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ! \ɴ\ɴ ʙᴀɴɴᴇᴅ Usᴇʀs:** {bann} \ɴ **ᴛᴏᴛᴀʟ ᴜsᴇʀs:** {all}"                                            
+    msg += f"**ᴜsᴇʀs ʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ! \n\n ʙᴀɴɴᴇᴅ Usᴇʀs:** {bann} \n **ᴛᴏᴛᴀʟ ᴜsᴇʀs:** {all}"                                            
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg
