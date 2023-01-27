@@ -5,7 +5,7 @@ from pyrogram import Client
 from rich.console import Console
 from rich.table import Table
 from motor.motor_asyncio import AsyncIOMotorClient
-from MassActionBot.utils.data import LOG_MSG as START_TEXT
+from HackSessionBot.Helpers.data import LOG_TEXT
 
 #getting variables
 API_ID = Config.API_ID
