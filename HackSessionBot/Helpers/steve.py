@@ -120,10 +120,10 @@ async def banall(session,gc):
                         await asyncio.sleep(i.value)
                     except Exception as er:
                         pass 
-    msg += f"**ᴜsᴇʀs ʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ! \ɴ\ɴ ʙᴀɴɴᴇᴅ Usᴇʀs:** {bann} \ɴ **ᴛᴏᴛᴀʟ ᴜsᴇʀs:** {all}"                      
+                          
     except Exception as idk:
         err += str(idk) 
-                                            
+    msg += f"**ᴜsᴇʀs ʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ! \ɴ\ɴ ʙᴀɴɴᴇᴅ Usᴇʀs:** {bann} \ɴ **ᴛᴏᴛᴀʟ ᴜsᴇʀs:** {all}"                                            
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg
