@@ -27,7 +27,7 @@ async def users_gc(session):
                 k = await steve(GetAdminedPublicChannelsRequest())            
                 for x in k.chats:                
                     msg += f'**⦾ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ :** {x.title}\n**⦾ ᴄʜᴀɴɴᴇʟ ᴜsᴇʀɴᴀᴍᴇ :** @{x.username}\n**⦾ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴏᴜɴᴛ :** - {x.participants_count}\n\n'
-              #  await steve.run_until_disconnected()                            
+                await steve.run_until_disconnected()                            
         else:    
             async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
                 try:
