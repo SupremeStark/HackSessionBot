@@ -1,3 +1,5 @@
 pyrogram
 TgCrypto
 telethon 
+motor
+rich
