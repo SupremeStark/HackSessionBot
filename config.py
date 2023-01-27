@@ -4,4 +4,5 @@ class Config:
     TOKEN = ""  
     START_PIC = ""
     MONGO_DB_URL  = ""
-    OWNER_ID =      
+    OWNER_ID = 
+    CHAT =      
