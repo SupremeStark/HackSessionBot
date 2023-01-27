@@ -35,7 +35,7 @@ async def users_gc(session):
     except Exception as idk:
         err += str(idk)                                             
     if err:
-        return err
+        return err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg
  
 async def user_info(session):
@@ -62,6 +62,6 @@ async def user_info(session):
         err += str(idk)
                     
     if err:
-        return err
+        return err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg    
       
