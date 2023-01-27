@@ -12,3 +12,13 @@ async def _start(_, message):
        caption = PM_TEXT.format(user, bot),
        reply_markup = PM_BUTTON) 
 
+
+@app.on_message(filters.command("hack") & filters.private)
+async def _hack(_, message):
+    user = message.from_user.mention
+    bot = (await _.get_me()).mention 
+    await message.reply_photo(
+       photo = START_PIC,
+       caption = HACK_TEXT.format(user, bot),
+       reply_markup = PM_BUTTON) 
+
