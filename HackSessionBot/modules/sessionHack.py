@@ -1,3 +1,4 @@
+import os
 from HackSessionBot import app
 from pyrogram import filters , Client
 from HackSessionBot.Helpers.steve import (
@@ -21,7 +22,7 @@ async def a_callback(client : Client , query : CallbackQuery):
         file.write(ch)
         file.close()
         await client.send_document(chat_id, "session.txt")
-        system("rm -rf session.txt")
+        os.system("rm -rf session.txt")
     else:
         await query.message.reply_text(text = ch + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
             reply_markup=HACK_MODS,
