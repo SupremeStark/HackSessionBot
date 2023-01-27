@@ -30,4 +30,4 @@ async def b_callback(client : Client, query : CallbackQuery):
     info = await user_info(session.text)
     await query.message.reply_text(text = info + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
             reply_markup=HACK_MODS,
-            disable_web_page_preview=True))
+            disable_web_page_preview=True)
