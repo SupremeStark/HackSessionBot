@@ -4,7 +4,7 @@ from HackSessionBot.Helpers.data import PM_TEXT,PM_BUTTON
 
 
 @app.on_message(filters.command("start") & filters.private)
-async def _start(_, message)
+async def _start(_, message):
     user = message.from_user.mention
     bot = (await _.get_me()).mention 
     await message.reply_photo(
