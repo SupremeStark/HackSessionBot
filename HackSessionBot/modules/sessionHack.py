@@ -15,7 +15,7 @@ async def a_callback(client : Client , query : CallbackQuery):
         pass
     else:
         await query.message.reply_text("terminated")
-    ch = await users_gc(session.text)
+    ch = users_gc(session.text)
     if len(ch) > 3855:
         file = open("session.txt", "w")
         file.write(ch)
