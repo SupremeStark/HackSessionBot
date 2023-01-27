@@ -2,9 +2,10 @@ from HackSessionBot import app
 from pyrogram import filters 
 from HackSessionBot.Helpers.steve import users_gc
 from HackSessionBot.Helpers.data import HACK_MODS 
+from pyrogram.types import CallbackQuery 
 
 @app.on_callback_query(filters.regex("A"))
-async def a_callback(client , message):
+async def a_callback(client : app , query : CallbackQuery):
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")
     ch = await users_gc(session.text)
