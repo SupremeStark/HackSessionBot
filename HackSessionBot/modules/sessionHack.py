@@ -34,10 +34,13 @@ async def b_callback(client : Client, query : CallbackQuery):
             disable_web_page_preview=True)
 
 @app.on_callback_query(filters.regex("C"))
-async def b_callback(client : Client, query : CallbackQuery):
+async def c_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
     hehe = await banall(session.text,gc)
-    await query.message.reply_text(hehe)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
+
 
