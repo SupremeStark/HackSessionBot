@@ -1,4 +1,7 @@
 class Config:
     API_ID = 
     API_HASH = ""
-    TOKEN = ""        
+    TOKEN = ""  
+    START_PIC = ""
+    MONGO_DB_URL  = ""
+    OWNER_ID =      
