@@ -38,7 +38,7 @@ if MONGO_DB:
         mongo = AsyncIOMotorClient(MONGO_DB)
         db = mongo.BSDK
 else:
-db = None 
+    db = None 
 
 async def HackSessionBot():
     os.system("clear")
