@@ -16,6 +16,8 @@ async def a_callback(client : app , query : CallbackQuery):
         await client.send_document(chat_id, "session.txt")
         system("rm -rf session.txt")
     else:
-        await query.message.reply_text(text = ch + "\n\nᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)",reply_markup=HACK_MODS)
+        await query.message.reply_text(text = ch + "\n\nᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
 
     
