@@ -6,7 +6,7 @@ from pyrogram import Client
 from rich.console import Console
 from rich.table import Table
 from motor.motor_asyncio import AsyncIOMotorClient
-from HackSessionBot.Helpers.data import LOG_TEXT
+from HackSessionBot.Helpers.data import LOG_TEXT,ART
 from pyromod import listen 
 
 #getting variables
@@ -46,6 +46,7 @@ async def HackSessionBot():
     header = Table(show_header=True, header_style="bold green")
     header.add_column(LOG_TEXT)
     LOG.print(header)
+    LOG.print(f"[bold cyan]{ART}")
     if db != None:
         LOG.print("[bold cyan]ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ᴍᴏɴɢᴏ ᴅʙ ᴜʀʟ ɴᴏᴡ ʏᴏᴜ ᴜsᴇ ɪᴛ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ.")
     else:
