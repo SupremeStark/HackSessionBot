@@ -41,7 +41,7 @@ if MONGO_DB:
 async def HackSessionBot():
     os.system("clear")
     header = Table(show_header=True, header_style="bold green")
-    header.add_column(START_TEXT)
+    header.add_column(LOG_TEXT)
     LOG.print(header)
     if MONGO_DB:
         LOG.print("[bold cyan]ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ᴍᴏɴɢᴏ ᴅʙ ᴜʀʟ ɴᴏᴡ ʏᴏᴜ ᴜsᴇ ɪᴛ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ.")
