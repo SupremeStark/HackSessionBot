@@ -16,7 +16,7 @@ async def _start(_, message):
 
 @app.on_message(filters.command("hack") & filters.private)
 async def _hack(_, message):
-    await message.reply_text(HACK_TEXT
+    await message.reply_text(HACK_TEXT,
               reply_markup = HACK_MODS) 
 
 
