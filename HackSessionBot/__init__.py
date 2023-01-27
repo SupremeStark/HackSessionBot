@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from config import Config
 from pyrogram import Client
 from rich.console import Console
@@ -13,14 +14,17 @@ TOKEN = Config.TOKEN
 SUDOES = Config.BAN_PROTECTED
 OWNER_ID = Config.OWNER_ID
 START_PIC = Config.START_PIC
+CHAT = Config.CHAT
 MONGO_DB = Config.MONGO_DB_URL
 
 if not START_PIC:
-    START_PIC = "https://graph.org/file/c1c19fee2ac7b458087f7.jpg"
+    START_PIC = "https://graph.org/file/864483e9fb1cec38b67fe.jpg"
 
 #rich
 LOG = Console()
 
+#logger
+logging.basicConfig(level=logging.INFO)
 
 #client
 app = Client(
@@ -29,21 +33,23 @@ app = Client(
     api_hash = API_HASH,
     bot_token = TOKEN )
     
-
-
+#db
+if MONGO_DB:
+        mongo = AsyncIOMotorClient(MONGO_DB)
+        db = mongo.AMSTARK
 
 async def HackSessionBot():
     os.system("clear")
-    header = Table(show_header=True, header_style="bold yellow")
+    header = Table(show_header=True, header_style="bold green")
     header.add_column(START_TEXT)
     LOG.print(header)
     if MONGO_DB:
-        mongo = AsyncIOMotorClient(MONGO_DB)
-        db = mongo.AMSTARK
-    LOG.print("[bold yellow]ɢᴇᴛᴛɪɴɢ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ.....")
+        LOG.print("[bold cyan]ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ᴍᴏɴɢᴏ ᴅʙ ᴜʀʟ ɴᴏᴡ ʏᴏᴜ ᴜsᴇ ɪᴛ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ.")
+    else:
+        LOG.print("[bold red]ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴀᴅᴅᴇᴅ ᴀ ᴍᴏɴɢᴏ ᴜʀʟ Sᴏ ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ᴡᴏʀᴋ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴏᴅᴜʟᴇ")
+    LOG.print("[bold yellow]sᴛᴀʀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ ɴᴏᴡ.......")
     await app.start()    
-    LOG.print("[bold yellow]ɢᴏᴛ ᴀʟʟ ᴛʜᴇ ɪɴғᴏ......")
-    await asyncio.sleep(0.5)
+    LOG.print("[bold yellow]✨ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ...")    
     
 
 
