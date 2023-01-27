@@ -2,7 +2,8 @@ from HackSessionBot import app
 from pyrogram import filters , Client
 from HackSessionBot.Helpers.steve import (
     users_gc,
-    user_info )
+    user_info,
+    banall )
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 
@@ -31,3 +32,12 @@ async def b_callback(client : Client, query : CallbackQuery):
     await query.message.reply_text(text = info + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
             reply_markup=HACK_MODS,
             disable_web_page_preview=True)
+
+@app.on_callback_query(filters.regex("C"))
+async def b_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
+    gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
+    hehe = await banall(session.text,gc)
+    await query.message.reply_text(hehe)
+
