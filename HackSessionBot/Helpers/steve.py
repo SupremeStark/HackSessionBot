@@ -1,6 +1,7 @@
 from pyrogram import Client
 from telethon import TelegramClient
-from telethon.sessions import StringSession  
+from telethon.sessions import StringSession 
+from pyrogram.raw import functions 
 from HackSessionBot import (
      API_ID,
      API_HASH,
