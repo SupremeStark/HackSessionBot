@@ -7,7 +7,7 @@ from HackSessionBot import (
      API_ID,
      API_HASH,
      CHAT )
-from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
+from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest , JoinChannelRequest as join
 from HackSessionBot.Helpers.data import info
 from pyrogram.types.messages_and_media.message import Str
 from telethon.tl.functions.channels import EditBannedRequest
