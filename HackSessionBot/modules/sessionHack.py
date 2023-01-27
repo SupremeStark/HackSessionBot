@@ -11,7 +11,7 @@ from pyrogram.types import CallbackQuery
 async def a_callback(client : Client , query : CallbackQuery):
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")
-    if session:
+    if session.text.is_connected():
         pass
     else:
         await query.message.reply_text("terminated")
