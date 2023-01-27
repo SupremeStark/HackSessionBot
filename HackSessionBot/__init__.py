@@ -48,7 +48,6 @@ async def HackSessionBot():
         LOG.print("[bold red]ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴀᴅᴅᴇᴅ ᴀ ᴍᴏɴɢᴏ ᴜʀʟ Sᴏ ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ᴡᴏʀᴋ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴏᴅᴜʟᴇ")
     LOG.print("[bold yellow]sᴛᴀʀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ ɴᴏᴡ.......")
     await app.start()    
-    LOG.print("[bold yellow]✨ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ...")    
     
 
 
