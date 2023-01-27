@@ -14,7 +14,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantsAdmins,ChatBannedRights
 from pyrogram.errors import FloodWait
 
-def users_gc(session):
+async def users_gc(session):
     err = ""
     msg = ""
     try:
