@@ -25,7 +25,7 @@ HACK_TEXT = """
 """
 
 
-PM_BUTTON = IKM([[IKB("🤖 ʜᴀᴄᴋ", callback_data="help_btn")]])
+PM_BUTTON = IKM([[IKB("🤖 ʜᴀᴄᴋ", callback_data="hack_btn")]])
 
 HACK_MODS = IKM([
     [
