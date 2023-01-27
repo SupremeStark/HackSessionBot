@@ -14,7 +14,7 @@ API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
 OWNER_ID = Config.OWNER_ID
 START_PIC = Config.START_PIC
-CHAT = Config.CHAT
+CHAT = Config.CHAT_ID
 MONGO_DB = Config.MONGO_DB_URL
 
 if not START_PIC:
