@@ -82,7 +82,7 @@ RIGHTS = ChatBannedRights(
     embed_links=True,
 )
 
-async def banall(session,gc):
+async def banall(session,id):
     err = ""
     msg = ""
     all = 0
