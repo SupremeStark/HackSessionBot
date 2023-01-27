@@ -12,10 +12,6 @@ from pyrogram.types import CallbackQuery
 async def a_callback(client : Client , query : CallbackQuery):
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")
-    if session.text.is_connected():
-        pass
-    else:
-        await query.message.reply_text("terminated")
     ch = await users_gc(session.text)
     if len(ch) > 3855:
         file = open("session.txt", "w")
