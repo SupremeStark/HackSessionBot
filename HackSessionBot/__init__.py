@@ -11,7 +11,6 @@ from HackSessionBot.Helpers.data import LOG_TEXT
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
-SUDOES = Config.BAN_PROTECTED
 OWNER_ID = Config.OWNER_ID
 START_PIC = Config.START_PIC
 CHAT = Config.CHAT
@@ -36,7 +35,7 @@ app = Client(
 #db
 if MONGO_DB:
         mongo = AsyncIOMotorClient(MONGO_DB)
-        db = mongo.AMSTARK
+        db = mongo.BSDK
 
 async def HackSessionBot():
     os.system("clear")
