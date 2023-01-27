@@ -44,7 +44,7 @@ async def HackSessionBot():
     header = Table(show_header=True, header_style="bold green")
     header.add_column(LOG_TEXT)
     LOG.print(header)
-    if MONGO_DB:
+    if db != None:
         LOG.print("[bold cyan]ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ᴍᴏɴɢᴏ ᴅʙ ᴜʀʟ ɴᴏᴡ ʏᴏᴜ ᴜsᴇ ɪᴛ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ.")
     else:
         LOG.print("[bold red]ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴀᴅᴅᴇᴅ ᴀ ᴍᴏɴɢᴏ ᴜʀʟ Sᴏ ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ᴡᴏʀᴋ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴏᴅᴜʟᴇ")
