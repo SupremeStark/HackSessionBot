@@ -5,4 +5,4 @@ class Config:
     START_PIC = ""
     MONGO_DB_URL  = ""
     OWNER_ID =5459540851 
-    CHAT_ID = -1001717881477    
+    CHAT = "@NandhaSupport"    
