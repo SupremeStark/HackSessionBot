@@ -1,7 +1,7 @@
 from HackSessionBot import app
 from pyrogram import filters 
 from HackSessionBot.Helpers.steve import users_gc
-from HackSessionBot.Helpers.data 
+from HackSessionBot.Helpers.data import HACK_MODS 
 
 @app.on_callback_query(filters.regex("A"))
 async def a_callback(client , message):
@@ -15,6 +15,6 @@ async def a_callback(client , message):
         await client.send_document(chat_id, "session.txt")
         system("rm -rf session.txt")
     else:
-        await query.message.reply_text(ch + "\n\nᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)")
+        await query.message.reply_text(text = ch + "\n\nᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)",reply_markup=HACK_MODS)
 
     
