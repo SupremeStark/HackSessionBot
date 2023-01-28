@@ -1,6 +1,6 @@
 import os
 import random 
-from MassActionBot import app,LOG
+from HackSessionBot import app,LOG
 from pyrogram import filters
 from PIL import Image,ImageDraw,ImageFont
 
