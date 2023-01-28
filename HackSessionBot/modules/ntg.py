@@ -15,7 +15,7 @@ async def infopic(pic,id,user_name):
     back_im.paste(a, (90, 50)) 
     draw = ImageDraw.Draw(back_im)
     draw.text((755,245),
-                text=name,
+                text=user_name,
                 font=m_font,
                 fill=(275,275,275))
     draw.text((690,330),
