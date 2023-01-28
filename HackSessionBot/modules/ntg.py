@@ -18,7 +18,7 @@ async def infopic(pic,id,user_name):
                 text=f"name: {user_name}",
                 font=m_font,
                 fill=(275,275,275))
-    draw.text((300,200),
+    draw.text((100,200),
                 text=f"id: {str(id)}",
                 font=m_font,
                 fill=(275,275,275))               
