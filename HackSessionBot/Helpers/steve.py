@@ -22,7 +22,7 @@ async def users_gc(session):
     try:
         if session.endswith("="):
             try:
-                async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:   
+                with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:   
             except SESSION_EXPIRED:
                 pass              
                 try:
