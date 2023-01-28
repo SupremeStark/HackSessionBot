@@ -13,8 +13,6 @@ from pyrogram.types.messages_and_media.message import Str
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantsAdmins,ChatBannedRights
 from pyrogram.errors import FloodWait
-from telethon.errors import SESSION_EXPIRED
-
 
 async def users_gc(session):
     err = ""
