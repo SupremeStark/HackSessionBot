@@ -5,24 +5,14 @@ from pyrogram import filters
 from PIL import Image,ImageDraw,ImageFont
 
 
-async def infopic(pic,id,user_name,bounty):
+async def infopic(pic,id,user_name):
     img1 = Image.open("./HackSessionBot/modules/anya.jpg")
     img2 = Image.open(pic)   
     i_width, i_height = img1.size
-    m_font = ImageFont.truetype("./HackSessionBot/modules/fonts.ttf", int((70 / 640) * i_width)) 
-    a = img2.resize((750,550))
+    m_font = ImageFont.truetype("./HackSessionBot/modules/a.otf", int((70 / 640) * i_width)) 
+    a = img2.resize((310,310))
     back_im = img1.copy()
-    back_im.paste(a, (79, 260))
-    draw = ImageDraw.Draw(back_im)
-    draw.text((280,930),
-                text=user_name,
-                font=m_font,
-                fill=(92,64,51))
-               
-    draw.text((180,1055),
-                text=bounty,
-                font=m_font,
-                fill=(92,64,51))            
+    back_im.paste(a, (90, 50))                
     back_im.save(f"./HackSessionBot/modules/anya{id}.jpg")
     return f"./HackSessionBot/modules/anya{id}.jpg"
     
