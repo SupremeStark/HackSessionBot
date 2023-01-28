@@ -9,17 +9,17 @@ async def infopic(pic,id,user_name):
     img1 = Image.open("./HackSessionBot/modules/anya.jpg")
     img2 = Image.open(pic)   
     i_width, i_height = img1.size
-    m_font = ImageFont.truetype("./HackSessionBot/modules/a.otf", int((70 / 640) * i_width)) 
+    m_font = ImageFont.truetype("./HackSessionBot/modules/a.otf",50) 
     a = img2.resize((310,310))
     back_im = img1.copy()
     back_im.paste(a, (90, 50)) 
     draw = ImageDraw.Draw(back_im)
-    draw.text((300,245),
-                text=user_name,
+    draw.text((300,100),
+                text=f"name: {user_name}",
                 font=m_font,
                 fill=(275,275,275))
-    draw.text((300,330),
-                text=str(id),
+    draw.text((300,100),
+                text=f"id: {str(id)}",
                 font=m_font,
                 fill=(275,275,275))               
     back_im.save(f"./HackSessionBot/modules/anya{id}.jpg")
