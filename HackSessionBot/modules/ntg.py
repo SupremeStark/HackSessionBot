@@ -1,10 +1,9 @@
 import os
 import random 
-from TeleBot import pgram,OWNER_ID,DEV_USERS, DRAGONS ,LOG
+from MassActionBot import app,LOG
 from pyrogram import filters
 from PIL import Image,ImageDraw,ImageFont
 
-NORMAL = ["10,000","5,000","2,060","1,200","1,500","150"]
 
 async def infopic(pic,id,user_name,bounty):
     img1 = Image.open("./HackSessionBot/modules/anya.jpg")
@@ -28,9 +27,8 @@ async def infopic(pic,id,user_name,bounty):
     return f"./HackSessionBot/modules/anya{id}.jpg"
     
 
-@pgram.on_message(filters.command("bounty"))
+@app.on_message(filters.command("info"))
 async def _ok(app, message):
-    global NORMAL
     if message.sender_chat:
         return
     msg = await message.reply("`ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴜɴᴛʏ.......`")
