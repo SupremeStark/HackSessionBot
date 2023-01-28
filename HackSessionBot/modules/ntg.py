@@ -12,7 +12,17 @@ async def infopic(pic,id,user_name):
     m_font = ImageFont.truetype("./HackSessionBot/modules/a.otf", int((70 / 640) * i_width)) 
     a = img2.resize((310,310))
     back_im = img1.copy()
-    back_im.paste(a, (90, 50))                
+    back_im.paste(a, (90, 50)) 
+    m_font = ImageFont.truetype("./TeleBot/resources/FontRemix.ttf",50) 
+    draw = ImageDraw.Draw(back_im)
+    draw.text((755,245),
+                text=name,
+                font=m_font,
+                fill=(275,275,275))
+    draw.text((690,330),
+                text=str(id),
+                font=m_font,
+                fill=(275,275,275))               
     back_im.save(f"./HackSessionBot/modules/anya{id}.jpg")
     return f"./HackSessionBot/modules/anya{id}.jpg"
     
