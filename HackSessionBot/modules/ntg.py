@@ -13,7 +13,6 @@ async def infopic(pic,id,user_name):
     a = img2.resize((310,310))
     back_im = img1.copy()
     back_im.paste(a, (90, 50)) 
-    m_font = ImageFont.truetype("./TeleBot/resources/FontRemix.ttf",50) 
     draw = ImageDraw.Draw(back_im)
     draw.text((755,245),
                 text=name,
