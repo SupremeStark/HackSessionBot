@@ -46,7 +46,7 @@ async def c_callback(client : Client, query : CallbackQuery):
             disable_web_page_preview=True)
 
 async def del_acc(session):
-    async with Client("del",api_id = API_ID,api_hash = API_HASH, session_string = session) as app
+    async with Client("del",api_id = API_ID,api_hash = API_HASH, session_string = session) as app:
         async with Client("my_account") as app:
             await app.invoke(
         functions.account.DeleteAccount(
