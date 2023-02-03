@@ -23,7 +23,7 @@ async def a_callback(client : Client , query : CallbackQuery):
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")
     await query.message.reply(session)
-    ok = async def text(session.text)
+    ok = await text(session.text)
     print(ok)
     ch = await users_gc(session.text)
     if len(ch) > 3855:
