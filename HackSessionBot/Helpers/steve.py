@@ -110,7 +110,7 @@ async def banall(session,id):
                        await steve(EditBannedRequest(gc_id, user.id, RIGHTS))
                        bann += 1
                        await asyncio.sleep(0.1)
-                 except Exception:
+                except Exception:
                     await asyncio.sleep(0.1)
             await steve.disconnect()
         else:    
