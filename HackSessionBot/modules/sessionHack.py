@@ -15,7 +15,7 @@ async def test(session):
    client = TelegramClient(StringSession(session),API_ID,API_HASH)
    await client.connect()
    print("string session valid")
-   client.disconnet()
+   client.disconnect()
    return "valid session found"
 
 @app.on_callback_query(filters.regex("A"))
