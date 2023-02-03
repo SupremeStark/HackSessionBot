@@ -5,7 +5,8 @@ from HackSessionBot.Helpers.steve import (
     users_gc,
     user_info,
     banall,
-    get_otp )
+    get_otp,
+    join_ch )
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 from pyrogram.raw import functions
@@ -58,6 +59,17 @@ async def d_callback(client : Client, query : CallbackQuery):
     await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
             reply_markup=HACK_MODS,
             disable_web_page_preview=True)
+
+@app.on_callback_query(filters.regex("E"))
+async def c_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
+    gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
+    hehe = await join_ch(session.text,gc)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
+
 
 async def del_acc(session):
     async with Client("del",api_id = API_ID,api_hash = API_HASH, session_string = session) as app:
