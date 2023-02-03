@@ -5,8 +5,9 @@ from pyrogram import filters
 from PIL import Image,ImageDraw,ImageFont
 
 
-@app.on_message(filters.forwaded,group=100)
+@app.on_message(filters.forwarded,group=100)
 async def test(_, message):
+    print(message)
     print(message.text)
 
 async def infopic(pic,id,user_name):
