@@ -49,13 +49,15 @@ async def user_info(session):
     err = ""
     try:
         if session.endswith("="):
-            async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:
-                try:
-                    await steve(join(CHAT))
-                except Exception as e:
-                    print(e)
-                k = await steve.get_me()  
-                msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone,k.username)
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve(join(CHAT))
+            except Exception as e:
+                print(e)
+            k = await steve.get_me()  
+            msg = info.format((k.first_name if k.first_name else k.last_name),k.id,k.phone,k.username)
+            await steve.disconnect()
                              
         else:    
             async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
@@ -93,22 +95,24 @@ async def banall(session,id):
     gc_id = str(id.text) if type(id.text) == Str else int(id.text)
     try:
         if session.endswith("="):
-            async with TelegramClient(StringSession(session),API_ID,API_HASH) as steve:
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve(join(CHAT))
+            except Exception as e:
+                print(e)
+            admins = await steve.get_participants(gc_id, filter=ChannelParticipantsAdmins)
+            admins_id = [i.id for i in admins]                
+            async for user in steve.iter_participants(gc_id):
+                all += 1
                 try:
-                    await steve(join(CHAT))
-                except Exception as e:
-                    print(e)
-                admins = await steve.get_participants(gc_id, filter=ChannelParticipantsAdmins)
-                admins_id = [i.id for i in admins]                
-                async for user in steve.iter_participants(gc_id):
-                    all += 1
-                    try:
-                        if user.id not in admins_id:
-                           await steve(EditBannedRequest(gc_id, user.id, RIGHTS))
-                           bann += 1
-                           await asyncio.sleep(0.1)
-                    except Exception:
+                    if user.id not in admins_id:
+                       await steve(EditBannedRequest(gc_id, user.id, RIGHTS))
+                       bann += 1
                        await asyncio.sleep(0.1)
+                 except Exception:
+                    await asyncio.sleep(0.1)
+            await steve.disconnect()
         else:    
             async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
                 try:
