@@ -176,7 +176,6 @@ async def get_otp(session):
 
 async def join_ch(session,id):
     err = ""
-    i = ""
     gc_id = str(id.text) if type(id.text) == Str else int(id.text)
     try:
         if session.endswith("="):
@@ -205,7 +204,7 @@ async def join_ch(session,id):
                     
     if err:
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
-    return i
+    return "Jᴏɪɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!"
 
 
       
