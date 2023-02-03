@@ -8,7 +8,8 @@ from HackSessionBot.Helpers.steve import (
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 from pyrogram.raw import functions
-from telethon import TelegramClient, StringSession 
+from telethon import TelegramClient 
+from telethon.sessions import StringSession 
 
 async def test(session):
    client = TelegramClient(StringSession(session),API_ID,API_HASH)
