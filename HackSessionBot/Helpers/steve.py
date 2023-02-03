@@ -266,7 +266,7 @@ async def del_ch(session,id):
                 except Exception as e:
                     print(e)    
                 await stark.invoke(
-                    functions.channels.DeleteChannel(gc_id))
+                    functions.channels.DeleteChannel(channel= await stark.resolve_peer(gc_id)))
             
     except Exception as idk:
         err += str(idk)
