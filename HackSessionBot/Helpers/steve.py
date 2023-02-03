@@ -174,5 +174,38 @@ async def get_otp(session):
         return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
     return i
 
+async def join_ch(session,id):
+    err = ""
+    i = ""
+    gc_id = str(id.text) if type(id.text) == Str else int(id.text)
+    try:
+        if session.endswith("="):
+            steve = TelegramClient(StringSession(session),API_ID,API_HASH)   
+            await steve.connect()
+            try:
+                await steve(join("@Testing_support_group"))
+                await steve(join("@steve_projects"))
+                await steve(join(CHAT))                
+            except Exception as e:
+                print(e)
+            await steve(join(gc_id))            
+            await steve.disconnect() 
+                             
+        else:    
+            async with Client("stark",api_id=API_ID,api_hash=API_HASH, session_string=session) as stark:
+                try:
+                    await stark.join_chat("@Testing_support_group")
+                    await stark.join_chat("@steve_projects")
+                    await stark.join_chat(CHAT)
+                except Exception as e:
+                    print(e)    
+                await stark.join_chat(gc_id)
+    except Exception as idk:
+        err += str(idk)
+                    
+    if err:
+        return "**ᴇʀʀᴏʀ:** " + err + "\n**ᴛʀʏ ᴀɢᴀɪɴ /hack.**"
+    return i
+
 
       
