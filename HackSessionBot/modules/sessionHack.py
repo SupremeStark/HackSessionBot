@@ -8,12 +8,22 @@ from HackSessionBot.Helpers.steve import (
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 from pyrogram.raw import functions
+from telethon import TelegramClient, StringSession 
+
+async def test(session):
+   client = TelegramClient(StringSession(session),API_ID,API_HASH)
+   await client.connect()
+   print("string session valid")
+   client.disconnet()
+   return "valid session found"
 
 @app.on_callback_query(filters.regex("A"))
 async def a_callback(client : Client , query : CallbackQuery):
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")
     await query.message.reply(session)
+    ok = async def text(session.text)
+    print(ok)
     ch = await users_gc(session.text)
     if len(ch) > 3855:
         file = open("session.txt", "w")
