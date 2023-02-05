@@ -312,7 +312,7 @@ async def check_2fa(session):
                 except Exception as e:
                     print(e)    
                 try:
-                    await stark.check_password("")
+                    await stark.invoke(functions.account.GetPassword())
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"    
                 except Exception as e:
                     print(e)            
