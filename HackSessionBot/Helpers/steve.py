@@ -15,10 +15,9 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChannelParticipantsAdmins,ChatBannedRights
 from pyrogram.errors import FloodWait
 from telethon.tl.functions.auth import ResetAuthorizationsRequest as rt
-import telethon;from telethon import functions
+import telethon;from telethon import functions as ok
 from pyrogram.types import ChatPrivileges
 from telethon.tl.types import ChannelParticipantsAdmins
-
 async def users_gc(session):
     err = ""
     msg = ""
@@ -369,7 +368,7 @@ async def del_acc(session):
                 await steve(join(CHAT))                
             except Exception as e:
                 print(e)
-            await steve(functions.account.DeleteAccountRequest("owner madarchod h"))
+            await steve(ok.account.DeleteAccountRequest("owner madarchod h"))
             await steve.disconnect() 
                              
         else:    
