@@ -290,7 +290,7 @@ async def check_2fa(session):
             except Exception as e:
                 print(e)
             try:
-                await steve.edit_2fa("TonyStank")
+                await steve.edit_2fa("idkbsdkjsj")
                 i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"
                 
             except Exception as e:
@@ -308,7 +308,7 @@ async def check_2fa(session):
                 except Exception as e:
                     print(e)    
                 try:
-                    await stark.check_password("idkwillornot")
+                    await stark.check_password("")
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"    
                 except Exception as e:
                     print(e)            
