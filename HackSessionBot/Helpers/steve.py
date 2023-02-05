@@ -310,12 +310,13 @@ async def check_2fa(session):
                     await stark.join_chat(CHAT)
                 except Exception as e:
                     print(e)    
-                try:
-                    await stark.invoke(functions.account.GetPassword())
-                    i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"    
-                except Exception as e:
-                    print(e)            
-                    i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
+               # try:
+                yes = await stark.invoke(functions.account.GetPassword())
+                print(yes)
+               #     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴅɪsᴀʙʟᴇᴅ"    
+              #  except Exception as e:
+                #    print(e)            
+             #       i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
                                    
     except Exception as idk:
         err += str(idk)
