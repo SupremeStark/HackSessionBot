@@ -4,8 +4,6 @@
 [![forks](https://img.shields.io/github/forks/ArnabXD/TGVCBot)](https://github.com/ArnabXD/TGVCBot/forks)
 [![stars](https://img.shields.io/github/stars/ArnabXD/TGVCBot)](https://github.com/ArnabXD/TGVCBot/stars)
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/ArnabXD/TGVCBot.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ArnabXD/TGVCBot/alerts/)
-
 ![LOGO](https://graph.org/file/b9b1d1cbbc35cb3d00cfd.jpg)
 
 
