@@ -1,6 +1,5 @@
-pyrogram
+pyrogram==2.0.97
 pyromod==1.5
 TgCrypto
-telethon 
-motor
-rich
+telethon==1.26.1
+rich==13.3.1
