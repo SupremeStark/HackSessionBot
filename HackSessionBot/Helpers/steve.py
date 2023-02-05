@@ -306,7 +306,7 @@ async def check_2fa(session):
                     await stark.join_chat(CHAT)
                 except Exception as e:
                     print(e)    
-                security = await app.get_security_settings()
+                security = await stark.get_security_settings()
                 if isinstance(security.security_settings,pyrogram.types.security.SecureSettings):
                     i += "ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴇɴᴀʙʟᴇᴅ"
                 else:
