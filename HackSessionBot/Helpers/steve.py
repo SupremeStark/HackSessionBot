@@ -1,4 +1,5 @@
 import asyncio
+import pyrogram 
 from pyrogram import Client
 from telethon import TelegramClient
 from telethon.sessions import StringSession 
