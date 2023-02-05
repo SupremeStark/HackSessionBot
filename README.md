@@ -5,8 +5,7 @@
 [![stars](https://img.shields.io/github/stars/SupremeStark/HackSessionBot)](https://github.com/SupremeStark/HackSessionBot/stars)
 
 ![LOGO](https://graph.org/file/b9b1d1cbbc35cb3d00cfd.jpg)
-
-
+hii
 
 
 ### For Support :
