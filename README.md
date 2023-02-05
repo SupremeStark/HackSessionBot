@@ -1,6 +1,6 @@
 #HackSessionBot
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ArnabXD/TGVCBot/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SupremeStark/HackSessionBot/graphs/commit-activity)
 [![forks](https://img.shields.io/github/forks/SupremeStark/HackSessionBot)](https://github.com/SupremeStark/HackSessionBot/forks)
 [![stars](https://img.shields.io/github/stars/SupremeStark/HackSessionBot)](https://github.com/SupremeStark/HackSessionBot/stars)
 
