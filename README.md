@@ -14,6 +14,6 @@ sᴜᴘᴘᴏʀᴛs ʙᴏᴛʜ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏ
 
 ## Thanks To 🙏:
 [steve](https://t.me/STEVE_ROGERS_21) <br>
-[demo bot](http://t.me/Hack_User_Session_Bot)
+[Come here](http://t.me/Tech_Division)
 ---
 
